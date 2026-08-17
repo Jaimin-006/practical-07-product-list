@@ -2,35 +2,33 @@ import React from "react";
 
 function ProductList() {
   const products = [
-    { id: 1, name: "Laptop", price: 55000, category: "Electronics", icon: "💻" },
-    { id: 2, name: "Smartphone", price: 25000, category: "Electronics", icon: "📱" },
-    { id: 3, name: "Headphones", price: 2500, category: "Accessories", icon: "🎧" },
-    { id: 4, name: "Keyboard", price: 1500, category: "Accessories", icon: "⌨️" },
+    { id: 1, name: "Laptop", price: 55000, category: "Electronics" },
+    { id: 2, name: "Smartphone", price: 25000, category: "Electronics" },
+    { id: 3, name: "Headphones", price: 2500, category: "Accessories" },
+    { id: 4, name: "Keyboard", price: 1500, category: "Accessories" },
   ];
 
   return (
-    <div className="w-full max-w-6xl">
-      <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400 mb-8 text-center tracking-tight">
-        📦 Product List
+    <div className="max-w-5xl mx-auto">
+      <h1 className="text-2xl font-bold text-gray-800 text-center mb-8">
+        Product List
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
         {products.map((product) => (
           <div
             key={product.id}
-            className="bg-slate-800/90 backdrop-blur-md rounded-2xl p-6 border border-slate-700 shadow-xl hover:border-slate-600 transition hover:-translate-y-1 flex flex-col justify-between"
+            className="bg-white rounded-lg border border-gray-200 shadow-sm p-5 flex flex-col justify-between hover:shadow-md transition"
           >
             <div>
-              <div className="w-full h-24 rounded-xl bg-slate-900/60 border border-slate-700/60 flex items-center justify-center text-4xl mb-4">
-                {product.icon}
+              <div className="w-full h-20 bg-gray-100 rounded mb-3 flex items-center justify-center text-gray-400 text-2xl font-bold">
+                📦
               </div>
-              <h2 className="text-xl font-bold text-slate-100">{product.name}</h2>
-              <span className="inline-block mt-2 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-700 text-slate-300">
-                {product.category}
-              </span>
+              <h2 className="text-lg font-bold text-gray-800">{product.name}</h2>
+              <p className="text-xs font-medium text-gray-500 mt-1">{product.category}</p>
             </div>
-            <div className="mt-4 text-2xl font-extrabold text-blue-400">
+            <p className="text-xl font-extrabold text-blue-600 mt-4">
               ₹{product.price.toLocaleString()}
-            </div>
+            </p>
           </div>
         ))}
       </div>
